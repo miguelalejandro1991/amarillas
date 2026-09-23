@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #1a0b2b;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Título */
+.titulo {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 2.6rem;
+    color: #ffe98a;
+    text-shadow: 0 0 12px #ffd700, 0 0 25px #ffdd55;
+    z-index: 10;
+}
+
+/* Reproductor */
+.player {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.player p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffdede;
+    text-shadow: 0 0 10px #000;
+}
+
+audio {
+    margin-top: 10px;
+    width: 320px;
+    z-index: 10;
+}
+
+/* Dedicatoria */
+.dedicatoria {
+    position: absolute;
+    top: 200px;   /* ANTES estaba en 150px */
+    width: 100%;
+    text-align: center;
+    color: #ffe9e9;
+    font-size: 1.05rem;
+    text-shadow: 0 0 10px #000;
+    line-height: 1.4rem;
+    z-index: 10;
+}
+
+
+/* Fondo dinámico */
+#fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Fotos pequeñas */
+.fondo-img {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    opacity: 0.22;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 6px #ffd700aa);
+    animation: mover 5s ease-in-out infinite;
+}
+
+@keyframes mover {
+    0%   { transform: translateY(0px) scale(1); }
+    50%  { transform: translateY(-15px) scale(1.05); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+/* Estrellas fugaces */
+.estrella-fugaz {
+    position: absolute;
+    width: 140px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, white);
+    top: 20%;
+    left: -20%;
+    transform: rotate(-20deg);
+    animation: fugaz 4s linear infinite;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.retraso1 { animation-delay: 1.5s; top: 40%; }
+.retraso2 { animation-delay: 3s; top: 60%; }
+
+@keyframes fugaz {
+    to {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+/* Flor grande */
+.flor-grande {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+
+.flor-grande img {
+    width: 300px;
+    filter: drop-shadow(0 0 18px #ffd700aa);
+}
